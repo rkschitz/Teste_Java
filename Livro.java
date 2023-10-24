@@ -19,7 +19,7 @@ public class Livro {
 
     public String toString() {
         return "Título: " + this.titulo 
-            + ". Autor: " + this.autor.nome 
+            + ". Autor: " + this.autor.getNome() 
             + ". Disponível: " + (this.disponivel ? "Sim" : "Não");
     }
 

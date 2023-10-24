@@ -31,7 +31,7 @@ public class Gerenciar {
                     break;
                 }
                 case 2: {
-                    if(Autor.autores.size() <= 0) {
+                    if(Autor.getAutores().size() <= 0) {
                         System.out.println("Não existem autores cadastrados para criar um livro");
                         break;
                     }
@@ -43,7 +43,7 @@ public class Gerenciar {
                         Autor.listarAutores();
                         try {
                             posicaoAutor = sc.nextInt();
-                            if (posicaoAutor >= Autor.autores.size()) {
+                            if (posicaoAutor >= Autor.getAutores().size()) {
                                 throw new Exception("Autor inválido");
                             }
                         } catch (Exception e) {
@@ -52,7 +52,7 @@ public class Gerenciar {
                         }
                     } while (posicaoAutor < 0);
 
-                    Autor autor = Autor.autores.get(posicaoAutor);
+                    Autor autor = Autor.getAutores().get(posicaoAutor);
                     new Livro(titulo, autor, true);
                     break;
                 }
@@ -109,7 +109,7 @@ public class Gerenciar {
                     } else if(Livro.livros.size() <= 0){
                         System.out.println("Não existem livros cadastrados para serem emprestados");
                         break;
-                    } else if(Autor.autores.size() <= 0){
+                    } else if(Autor.getAutores().size() <= 0){
                         System.out.println("Não existem autores cadastrados");
                         break;
                     }
@@ -158,7 +158,7 @@ public class Gerenciar {
                     } else if(Livro.livros.size() <= 0){
                         System.out.println("Não existem livros cadastrados para serem devolvidos");
                         break;
-                    } else if(Autor.autores.size() <= 0){
+                    } else if(Autor.getAutores().size() <= 0){
                         System.out.println("Não existem autores cadastrados");
                         break;
                     }
