@@ -1,8 +1,9 @@
-public class MidiaDigital extends Midia {
+public class MidiaDigital{
     private String album;
+    private Midia midia;
 
     public MidiaDigital(String titulo, boolean disponivel, String album){
-        super(titulo, disponivel);
+        this.midia = new Midia(titulo, disponivel);
         this.album = album;
     }
 
@@ -15,6 +16,6 @@ public class MidiaDigital extends Midia {
     }
 
     public String toString(){
-        return "Titulo: " + this.titulo + " Album: " + this.album;
+        return "Titulo: " + this.midia.titulo + " Album: " + this.album;
     }
 }
