@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public class Livro {
-    public String titulo;
-    public Autor autor;
-    public boolean disponivel;
+    private String titulo;
+    private Autor autor;
+    private boolean disponivel;
 
-    public static ArrayList<Livro> livros = new ArrayList<>();
-    public static ArrayList<Livro> livrosEmprestados = new ArrayList<>();
-    public static ArrayList<Livro> livrosDisponiveis = new ArrayList<>();
+    private static ArrayList<Livro> livros = new ArrayList<>();
+    private static ArrayList<Livro> livrosEmprestados = new ArrayList<>();
+    private static ArrayList<Livro> livrosDisponiveis = new ArrayList<>();
 
     public Livro(String titulo, Autor autor, boolean disponivel) {
         this.titulo = titulo;
@@ -15,6 +15,14 @@ public class Livro {
         this.disponivel = disponivel;
 
         livros.add(this);
+    }
+
+    public String getAutor(){
+        return this.autor.getNome();
+    }
+
+    public void setAutor(Autor autor){
+        this.autor = autor;
     }
 
     public String toString() {
