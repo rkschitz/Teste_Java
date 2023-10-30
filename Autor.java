@@ -7,38 +7,36 @@ public class Autor extends Pessoa {
     public Autor(String nome, String nacionalidade) {
         super(nome);
         this.nacionalidade = nacionalidade;
+
         autores.add(this);
     }
 
-    public Autor(String nome){
+    public Autor(String nome) {
         this(nome, "Brasil");
+        /*super(nome);
+        this.nacionalidade = "Brasil";
+
+        autores.add(this);*/
     }
 
-    public void setNome(String nome){
-        this.nome = nome;
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
     }
 
-    public String getNome(){
-        return this.nome;
-    }
-
-    public String setNacionalidade(){
+    public String getNacionalidade() {
         return this.nacionalidade;
     }
 
-    public String getNacionalidade(){
-        return this.nacionalidade;
-    }
-    public static ArrayList<Autor> getAutores(){
+    public static ArrayList<Autor> getAutores() {
         return autores;
     }
 
     public String toString() {
-        return "Nome: " + this.nome;
+        return super.toString() + ". Nacionalidade: " + this.nacionalidade;
     }
 
     public static void listarAutores() {
-        for (int i = 0; i < autores.size(); i++) {
+        for(int i = 0; i < autores.size(); i++) {
             System.out.println(i + " - " + autores.get(i).toString());
         }
     }
