@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Biblioteca {
     private String nome;
     private ArrayList<Livro> livros;
+    private ArrayList<Midia> midias = new ArrayList<>();
 
     private static ArrayList<Biblioteca> bibliotecas = new ArrayList<>();
 
@@ -12,14 +13,19 @@ public class Biblioteca {
 
         bibliotecas.add(this);
     }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
     public String getNome() {
         return this.nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    public ArrayList<Midia> getMidia() {
+        return this.midias;
+    }
+    
     public static ArrayList<Biblioteca> getBibliotecas() {
         return bibliotecas;
     }
@@ -27,6 +33,7 @@ public class Biblioteca {
     public ArrayList<Livro> getLivros() {
         return this.livros;
     }
+
 
     public String toString() {
         return "Nome: " + this.nome;
@@ -36,17 +43,27 @@ public class Biblioteca {
         this.livros.add(livro);
     }
 
+    public void adicionarMidia(Midia midia) {
+        this.midias.add(midia);
+    }
+
     public void listarLivros() {
-        for(int i = 0; i < this.livros.size(); i++) {
+        for (int i = 0; i < this.livros.size(); i++) {
             System.out.println(i + " - " + this.livros.get(i).toString());
         }
     }
 
-    public static void listarBibliotecas() {
-        for(int i = 0; i < bibliotecas.size(); i++) {
-            Biblioteca biblioteca = bibliotecas.get(i);
-            System.out.println(i + " - " + biblioteca.toString());
-            biblioteca.listarLivros();
+    public void listarMidias() {
+        for (int i = 0; i < this.midias.size(); i++) {
+            System.out.println(i + " - " + this.midias.get(i).toString());
         }
     }
+
+    public static void listarBibliotecas() {
+        for (int i = 0; i < bibliotecas.size(); i++) {
+            Biblioteca biblioteca = bibliotecas.get(i);
+            System.out.println(i + " - " + biblioteca.toString());
+        }
+    }
+
 }

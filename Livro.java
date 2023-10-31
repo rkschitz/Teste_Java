@@ -20,9 +20,7 @@ public class Livro extends Midia {
     }
 
     public String toString() {
-        return "Título: " + this.titulo 
-            + ". Autor: " + this.autor.getNome() 
-            + ". Disponível: " + (this.disponivel ? "Sim" : "Não");
+            return ". Autor: " + this.autor.getNome() + super.toString(); 
     }
 
     public static void listarLivros() {
@@ -31,17 +29,8 @@ public class Livro extends Midia {
         }
     }
 
-    // public void emprestar() throws Exception {
-    //     if (!this.disponivel) {
-    //         throw new Exception("Livro não está disponível");
-    //     }
-    //     this.disponivel = false;
-    // }
+    public static ArrayList<Livro> getLivros() {
+        return livros;
+    }
 
-    // public void devolver() throws Exception {
-    //     if (this.disponivel) {
-    //         throw new Exception("Livro já está disponível");
-    //     }
-    //     this.disponivel = true;
-    // }
 }

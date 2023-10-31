@@ -11,14 +11,6 @@ public class Autor extends Pessoa {
         autores.add(this);
     }
 
-    public Autor(String nome) {
-        this(nome, "Brasil");
-        /*super(nome);
-        this.nacionalidade = "Brasil";
-
-        autores.add(this);*/
-    }
-
     public void setNacionalidade(String nacionalidade) {
         this.nacionalidade = nacionalidade;
     }
@@ -32,7 +24,7 @@ public class Autor extends Pessoa {
     }
 
     public String toString() {
-        return super.toString() + ". Nacionalidade: " + this.nacionalidade;
+        return super.toString() + " Nacionalidade: " + this.nacionalidade;
     }
 
     public static void listarAutores() {

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Pessoa {
-    protected String nome;
+    private String nome;
     private static ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
 
     public Pessoa(String nome) {
